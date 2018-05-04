@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="reveal.css">
+</head>
+<body>
+    <p>点击第一张图片播放视频，点击第二张图片播放音乐</p>
+    <a href="#" data-reveal-id="myModal">
+        <img id="img1" src="touxiang.jpg" style="width: 180px;height:180px;">
+        <img id="img2" src="touxiang.jpg" style="width: 180px;height:180px;">
+    </a>
+    <div id="myModal" class="reveal-modal">
+        <a class="close-reveal-modal">&#215;</a>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.reveal.js"></script>
+<script type="text/javascript" src="js/jquery.metadata.js"></script>
+<script type="text/javascript" src="js/jquery.media.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var media1 = '<a class="media" href="1.flv"></a>';
+        var media2 = '<a class="media" href="2.mp3"></a>';//http://cloud.video.taobao.com/play/u/750452133/p/2/e/1/t/1/78333884.swf
+        $('#img1').bind("click", function () {
+            $('#myModal').prepend(media1);
+            $('.media').media({width: 600, height: 450});
+        });
+        $("#img2").bind("click", function () {
+            $('#myModal').prepend(media2);
+            $('.media').media({width: 600, height: 20});
+        });
+    });
+</script>
